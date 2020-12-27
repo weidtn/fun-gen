@@ -1,0 +1,54 @@
+* fun-gen
+
+Small signal function generator in clojure to generate some fun.
+
+** Installation
+
+Download from https://github.com/weidtn/fun-gen
+
+** Usage
+
+It's a function generator to output signals like sin(x) or square(x).
+
+Run the project directly:
+#+begin_src shell
+clojure -M -m weidtn.fun-gen
+#+end_src
+
+Run the project's tests (they'll fail until you edit them):
+#+begin_src shell
+clojure -M:test:runner
+#+end_src
+
+Build an uberjar:
+#+begin_src shell
+clojure -M:uberjar
+#+end_src
+
+Run that uberjar:
+#+begin_src shell
+java -jar fun-gen.jar
+#+end_src
+
+** Options
+
+FIXME: listing of options this app accepts.
+
+** Examples
+
+...
+
+** Bugs
+
+...
+
+** Any Other Sections
+** That You Think
+** Might be Useful
+
+** License
+
+Copyright © 2020 Weidtn
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
