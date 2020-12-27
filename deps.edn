@@ -1,6 +1,7 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
-        metasoarous/oz {:mvn/version "1.6.0-alpha34"}}
+        metasoarous/oz {:mvn/version "1.6.0-alpha34"}
+        rm-hull/infix {:mvn/version "0.3.3"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.0.0"}}}

@@ -1,6 +1,7 @@
 (ns weidtn.fun-gen
   (:gen-class)
-  (:require [oz.core :as oz]))
+  (:require [oz.core :as oz]
+            [infix.macros :refer [$=]]))
 
 ;; Create x-data
 ;;
