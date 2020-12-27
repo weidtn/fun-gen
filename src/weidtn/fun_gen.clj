@@ -14,8 +14,11 @@
   "Returns the sine wave with amplitude, frequency and phase shifted for given x"
   ([x & {:keys [ampl freq phase] :or {ampl 1 freq 1 phase 0}}]
    (let [phase-rad (* phase (/ Math/PI 180))]
-     (println phase-rad)
-     (map #(* ampl %) (map #(Math/sin %) (map #(* freq %) (map #(+ phase-rad %) x)))))))
+     (->> x
+          (map #(+ phase-rad %) ,,,)
+          (map #(* freq %) ,,,)
+          (map #(Math/sin %) ,,,)
+          (map #(* ampl %) ,,,)))))
 
 ;; Testing
 (def x (create-x 1000)) ; 1000 datapoints between 0 and 2pi
