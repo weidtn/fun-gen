@@ -9,10 +9,10 @@
   "Creates x-data between zero and 2PI with a certain number of points to create functions with"
   [points]
   (range 0 (* 2 Math/PI) (/ (* 2 Math/PI) points)))
-  
 
 (defn sin 
   "Returns the sine wave with amplitude, frequency and phase shifted for given x"
+  ;; TODO: Rewrite so it returns a map with {:x x :sin (sin x)}
   ([x & {:keys [ampl freq phase] :or {ampl 1 freq 1 phase 0}}]
    (let [phase-rad (* phase (/ Math/PI 180))]
      (->> x
