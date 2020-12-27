@@ -3,6 +3,14 @@
   (:require [oz.core :as oz]
             [infix.macros :refer [$=]]))
 
+(defn deg-to-rad
+  [deg]
+  (* deg (/ Math/PI 180)))
+
+(defn rad-to-deg
+  [rad]
+  (* rad (/ 180 Math/PI)))
+
 ;; Create x-data
 ;;
 (defn create-x
@@ -14,7 +22,7 @@
   "Returns the sine wave with amplitude, frequency and phase shifted for given x"
   ;; TODO: Rewrite so it returns a map with {:x x :sin (sin x)}
   ([x & {:keys [ampl freq phase] :or {ampl 1 freq 1 phase 0}}]
-   (let [phase-rad (* phase (/ Math/PI 180))]
+   (let [phase-rad (deg-to-rad phase)]
      (->> x
           (map #(+ phase-rad %) ,,,)
           (map #(* freq %) ,,,)
