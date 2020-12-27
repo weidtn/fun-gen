@@ -20,7 +20,6 @@
 
 (defn sin 
   "Returns the sine wave with amplitude, frequency and phase shifted for given x"
-  ;; TODO: Rewrite so it returns a map with {:x x :sin (sin x)}
   ([x & {:keys [ampl freq phase] :or {ampl 1 freq 1 phase 0}}]
    (let [phase-rad (deg-to-rad phase)]
      (->> x
@@ -29,8 +28,18 @@
           (map #(Math/sin %) ,,,)
           (map #(* ampl %) ,,,)))))
 
+(defn create-map
+  "TODO: Creates a map from x and y {:x x :sin (sin x)}"
+  [xs ys]
+  (for [x xs
+        y ys]
+    (,,,,,,,)))
+
 ;; Testing
 (def x (create-x 1000)) ; 1000 datapoints between 0 and 2pi
+(def default-sin (sin x))
+
+(create-map x default-sin)
 
 (take 3 (sin x)) ; default works
 ;; => (0.0 0.006283143965558951 0.012566039883352607)
