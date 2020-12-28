@@ -17,14 +17,16 @@
      (for [x (range 0 (* 2 Math/PI) (/ (* 2 Math/PI) points))] ;; this line works!
        {:x x :y (* ampl (Math/sin (* freq (+ x phase-rad))))}))))
 
-;; plotting 
+;; plotting
 (oz/start-server!)
 
 (def line-plot
   {:data {:values (sin)}
    :encoding {:x {:field "x" :type "quantitative"}
               :y {:field "y" :type "quantitative"}}
-   :mark "line"})
+   :mark {:type "point"
+          :filled true
+          :size "1"}})
 
 ;; Render the plot
 (oz/view! line-plot)
